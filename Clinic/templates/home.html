@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MzeeMa Healthcare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #545ecb;
+            padding: 15px 20px;
+        }
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 500;
+        }
+        .navbar a:hover {
+            background-color: #545ecb6d;
+            border-radius: 5px;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .hamburger {
+            display: inline-block;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+        }
+        .hero {
+            background: url('https://images.pexels.com/photos/5722164/pexels-photo-5722164.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 24px;
+            margin: 10px 0 0;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .content p {
+            line-height: 1.6;
+            color: #666;
+        }
+        .content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .content ul li {
+            background: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="dropdown">
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="dropdown-content">
+                <a href="{%url 'departments'%}">Departments</a>
+                <a href="{%url 'doctors'%}">Doctors</a>
+                <a href="{%url 'contact'%}">Contact</a>
+                <a href="{%url 'about'%}">About</a>
+                <a href="{%url 'appointment'%}">Make an Appointment</a>
+                <a href="{%url 'meeting'%}">Meeting</a>
+                <a href="{%url 'logout'%}">Logout</a>
+            </div>
+        </div>
+        <div>
+            <a href="{% url 'login'%}">Login</a>
+            <a href="{% url 'register_doctor'%}">Doctor Registration</a>
+            <a href="{% url 'register_patient'%}">Patient Registration</a>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div>
+            <h1>MzeeMa Healthcare</h1>
+            <p>"Your health, our priority."</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>Welcome to MzeeMa Healthcare!</h2>
+        <p>Your health and well-being are our top priority. Whether you're looking for trusted medical advice, scheduling a consultation, or exploring ways to manage your health, we are here to support you every step of the way. Our dedicated team of healthcare professionals is committed to providing personalized care that meets your unique needs. Together, let’s work toward a healthier, happier you. Explore our services and take charge of your health today!</p>
+
+        <h2>Our Departments</h2>
+        <ul>
+            <li>Cardiology</li>
+            <li>Neurology</li>
+            <li>Pediatrics</li>
+            <li>Orthopedics</li>
+            <li>General Surgery</li>
+        </ul>
+    </div>
+</body>
+</html>
