@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import login
 from .forms import DoctorRegistrationForm, PatientRegistrationForm
 from django.http import HttpResponse
 from .models import DoctorProfile, Department
@@ -8,7 +9,8 @@ def register_doctor(request):
     if request.method =='POST':
         form = DoctorRegistrationForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save()
+            login(request, user)
             return redirect('login')
         
     else:
@@ -20,7 +22,8 @@ def register_patient(request):
     if request.method == 'POST':
         form =PatientRegistrationForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save()
+            login(request, user)
             return redirect('login')
         
     else:

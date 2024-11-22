@@ -124,6 +124,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#Django to use this custom user model
+AUTH_USER_MODEL = 'Clinic.CustomUser'
+
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 
 LOGIN_REDIRECT_URL = '/'
